@@ -1,12 +1,16 @@
 #include<stdio.h>
 #include<mysql/mysql.h>
-#include"index.h"
 
 int main()
 {
 	MYSQL *con=mysql_init(NULL);
 	MYSQL_RES *res;
 	MYSQL_ROW row;
+	char *server="localhost";
+	char *user="root";
+	char *password="root";
+	char *bd="prueba";
+	
 	if(!mysql_real_connect(con,SERVER,USER,PASSWORD,BD,0,NULL,0))
 	{
 		printf("Error %s\n",mysql_errno(con));
